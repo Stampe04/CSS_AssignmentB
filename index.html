@@ -44,6 +44,11 @@
     @media(max-width:620px){.fig-row{grid-template-columns:1fr;}}
     .finding{background:var(--surface);border-left:4px solid var(--accent);padding:16px 20px;margin:24px 0;max-width:720px;}
     .finding strong{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);display:block;margin-bottom:4px;}
+    .conclusion-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0;}
+    @media(max-width:640px){.conclusion-grid{grid-template-columns:1fr;}}
+    .conclusion-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);padding:22px;}
+    .conclusion-card h3{font-family:var(--serif);font-size:16px;font-weight:600;margin:0 0 10px;}
+    .conclusion-card p{font-size:14px;margin:0;color:var(--soft);max-width:none;}
     .wc-block{border-left:3px solid var(--border);padding-left:20px;margin:36px 0;}
     .wc-header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
     .wc-header h3{margin:0;}
@@ -78,6 +83,7 @@
   <a href="#echochambers">Echo Chambers</a>
   <a href="#text">Language</a>
   <a href="#year2013">2013 Snapshot</a>
+  <a href="#conclusions">Conclusions</a>
   <a href="#downloads">Downloads</a>
   <a href="#explainer">Notebook</a>
 </nav>
@@ -153,7 +159,7 @@
       <figcaption>Figure 5. Top-150 voters in the agreement network. Colour = community; size = connections; edge width = agreement strength.</figcaption>
     </figure>
     <h3>What each community talks about</h3>
-    <p>Every vote comes with a written comment. We used TF-IDF to find the vocabulary most distinctive to each community — words that appear frequently within a group but rarely across the others. Most communities share core criteria (<em>experience, tools, work</em>), but two stand out sharply.</p>
+    <p>Every vote comes with a written comment. We used TF-IDF to find the vocabulary most distinctive to each community — words that appear frequently within a group but rarely across the others. Most communities share core criteria (<em>experience, tools, work</em>), but two communities stand out sharply: Communities 1 and 4 have highly distinctive vocabularies dominated by specific names and places, suggesting they coalesced around real-world controversies rather than general voting philosophy.</p>
     
     <div class="wc-block">
       <div class="wc-header">
@@ -163,20 +169,20 @@
       <p>Top terms: <em>work, tools, experience, time, concerns, edits, content</em>. Applies broad content-quality criteria when judging candidates.</p>
       
     <figure class="figure">
-      <img src="community_0_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 0 (full dataset)." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for Community 0 (full dataset).</figcaption>
+      <img src="community_0_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 0." loading="lazy">
+      <figcaption>Figure 5a. TF-IDF word cloud for Community 0.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
       <div class="wc-header">
-        <h3>Community 1 &mdash; Tiny Contrarian Cluster</h3>
+        <h3>Community 1 &mdash; Eastern European Editor Controversy</h3>
         <span class="wc-size">4 members</span>
       </div>
-      <p>Only 4 members voting in lockstep. Too small for reliable TF-IDF — treat this word cloud with caution.</p>
+      <p>Top terms: <em>ghirlandajo, bakharev, alex, russian, nationalist, trolls, rights</em>. Despite having only 4 members, this community has a highly distinctive TF-IDF signature — its vocabulary is dominated by specific usernames and terms tied to a documented dispute involving Eastern European editors and allegations of nationalist bias.</p>
       
     <figure class="figure">
-      <img src="community_1_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 1 (full dataset)." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for Community 1 (full dataset).</figcaption>
+      <img src="community_1_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 1." loading="lazy">
+      <figcaption>Figure 5b. TF-IDF word cloud for Community 1.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -184,11 +190,11 @@
         <h3>Community 2 &mdash; Tool Use and Contributions</h3>
         <span class="wc-size">1,318 members</span>
       </div>
-      <p>Top terms: <em>tools, work, contributions, concerns, edits</em>. Places emphasis on responsible admin tool use.</p>
+      <p>Top terms: <em>tools, work, contributions, concerns, edits</em>. Places emphasis on whether candidates will use admin tools responsibly and avoid potential misuse.</p>
       
     <figure class="figure">
-      <img src="community_2_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 2 (full dataset)." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for Community 2 (full dataset).</figcaption>
+      <img src="community_2_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 2." loading="lazy">
+      <figcaption>Figure 5c. TF-IDF word cloud for Community 2.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -196,11 +202,11 @@
         <h3>Community 3 &mdash; Policy and Process</h3>
         <span class="wc-size">1,085 members</span>
       </div>
-      <p>Top terms: <em>tools, experience, edits, policy, time</em>. A policy-oriented lens — wants candidates who understand the rules.</p>
+      <p>Top terms: <em>tools, experience, edits, policy, time</em>. A policy-oriented lens — wants candidates who understand Wikipedia's rules and have demonstrated good judgement over time.</p>
       
     <figure class="figure">
-      <img src="community_3_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 3 (full dataset)." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for Community 3 (full dataset).</figcaption>
+      <img src="community_3_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 3." loading="lazy">
+      <figcaption>Figure 5d. TF-IDF word cloud for Community 3.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -208,11 +214,11 @@
         <h3>Community 4 &mdash; Balkan Nationalism Dispute</h3>
         <span class="wc-size">14 members</span>
       </div>
-      <p>Top terms: <em>serb, bosnia, croatia, montenegro, nationalist</em>. Formed around a well-documented long-running content dispute.</p>
+      <p>Top terms: <em>serb, bosnia, croatia, montenegro, nationalist, fullurl, oldid</em>. This small but distinctive community formed around disputes over Balkan nationalism content — a well-documented long-running conflict on Wikipedia.</p>
       
     <figure class="figure">
-      <img src="community_4_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 4 (full dataset)." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for Community 4 (full dataset).</figcaption>
+      <img src="community_4_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 4." loading="lazy">
+      <figcaption>Figure 5e. TF-IDF word cloud for Community 4.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -220,11 +226,11 @@
         <h3>Community 5 &mdash; The Dominant Old Guard</h3>
         <span class="wc-size">1,694 members</span>
       </div>
-      <p>Top terms: <em>experience, work, tools, contributions, edits</em>. The largest community, peaking in 2006, applying classic RfA criteria.</p>
+      <p>Top terms: <em>experience, work, tools, contributions, edits</em>. The largest community, peaking in 2006, representing established long-term editors applying classic RfA criteria.</p>
       
     <figure class="figure">
-      <img src="community_5_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 5 (full dataset)." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for Community 5 (full dataset).</figcaption>
+      <img src="community_5_tfidf_wordcloud.png" alt="TF-IDF word cloud for Community 5." loading="lazy">
+      <figcaption>Figure 5f. TF-IDF word cloud for Community 5.</figcaption>
     </figure>
     </div>
   </section>
@@ -258,13 +264,13 @@
     <h2>How the Admin Elections Changed</h2>
     <p class="lead">The dataset spans a decade during which Wikipedia transformed from a rapidly growing project to a more gatekept encyclopaedia. That shift is visible in the voting data.</p>
     <h3>Communities peaked in different eras</h3>
-    <p>The six communities did not all rise and fall together. Community 5 — the largest — peaked in 2006, while Community 0 peaked as late as 2010. This raises a key question: are these genuine ideological factions, or just cohorts of editors who happened to be active at the same time?</p>
+    <p>The six communities did not all rise and fall together. Community 5 — the largest — peaked in 2006, while Community 0 peaked as late as 2010. This raises a key question: are these genuine ideological factions, or merely cohorts of editors who happened to be active at the same time? We address this directly in the <a href="#year2013">2013 Snapshot</a> section below.</p>
     
     <figure class="figure">
       <img src="temporal_community_activity.png" alt="Votes cast per year by each community. Communities peak in different years." loading="lazy">
       <figcaption>Figure 8. Votes cast per year by each community. Communities peak in different years.</figcaption>
     </figure>
-    <p>Not only did communities differ in when they were most active — they also differed in how selective they became over time. Some communities were consistently strict; others grew more critical as the decade progressed.</p>
+    <p>Not only did communities differ in when they were most active — they also differed in how supportive they were. Some communities maintained a relatively stable support ratio; others grew markedly more critical over time, suggesting genuine shifts in ideology rather than just changes in who was voting.</p>
     
     <figure class="figure">
       <img src="temporal_community_support.png" alt="Support ratio per community over time." loading="lazy">
@@ -282,6 +288,10 @@
       <img src="temporal_success_rate.png" alt="Total RfA candidates per year and the fraction who were promoted." loading="lazy">
       <figcaption>Figure 10. Total RfA candidates per year and the fraction who were promoted.</figcaption>
     </figure>
+    <div class="finding">
+      <strong>Key insight</strong>
+      The RfA process underwent a structural tightening after 2007. Fewer candidates ran, fewer were promoted, and the support ratio fell — suggesting the community shifted from growing its admin base to protecting it. This mirrors broader trends in Wikipedia's editor participation, which peaked around the same period.
+    </div>
   </section>
 
   <!-- 06 STABILITY -->
@@ -300,8 +310,12 @@
       <img src="community_voter_retention.png" alt="Returning vs new voters broken down per community." loading="lazy">
       <figcaption>Figure 12. Returning vs new voters broken down per community.</figcaption>
     </figure>
+    <div class="finding">
+      <strong>Key insight</strong>
+      The communities are not stable long-term groups in the sense that the same people show up every year. Each community experiences significant turnover — new members join and old ones leave — yet the communities themselves persist. This suggests community identity is shaped more by shared voting norms than by a fixed group of individuals.
+    </div>
     <h3>The most contested elections</h3>
-    <p>Not all RfA elections were routine. Some candidates attracted fierce opposition. The most controversial candidate each year is shown below — blue bars indicate candidates promoted despite the controversy, red those who failed. Some heavily-opposed candidates still made it through, reflecting Wikipedia's consensus-based rather than majority-vote process.</p>
+    <p>Not all RfA elections were routine. Some candidates attracted fierce opposition. The most controversial candidate each year is shown below — blue bars indicate candidates promoted despite the controversy, red those who failed. Notably, some heavily-opposed candidates still made it through, reflecting Wikipedia's consensus-based rather than majority-vote process: a vocal minority can sink a candidacy, but does not always succeed.</p>
     
     <figure class="figure">
       <img src="controversy_trends.png" alt="Average controversy trend (top) and most controversial candidate per year (bottom). Blue = promoted, red = failed." loading="lazy">
@@ -313,7 +327,7 @@
   <section id="echochambers">
     <div class="label">07 &mdash; Echo Chambers</div>
     <h2>Are the Communities Ideological Bubbles?</h2>
-    <p class="lead">A true echo chamber is not just a group that agrees — its members form dense clusters of mutual agreement and rarely connect with outsiders. We measured this for each community.</p>
+    <p class="lead">A true echo chamber is not just a group that agrees — its members form dense clusters of mutual agreement and rarely connect with outsiders. We measured this for each community using clustering coefficient, internal edge density, and the ratio of internal to external connections.</p>
     
     <figure class="figure">
       <img src="community_echo_metrics.png" alt="Internal clustering coefficient, edge density, and agreement strength per community." loading="lazy">
@@ -326,7 +340,7 @@
     </figure>
     <div class="finding">
       <strong>Key insight</strong>
-      Echo chamber strength is almost entirely a function of community size. The two tiny communities (C1 and C4, with 4 and 14 members) have near-perfect clustering and agreement — their members vote in complete lockstep. The four large communities cluster at a moderate ~0.5, making them <strong>loose coalitions</strong> rather than tight ideological bubbles.
+      Echo chamber strength is almost entirely a function of community size. The two tiny communities (C1 and C4, with 4 and 14 members) have near-perfect clustering and agreement — their members vote in complete lockstep. The four large communities cluster at a moderate ~0.5, making them <strong>loose coalitions</strong> rather than tight ideological bubbles. Their members freely connect across community lines, which means influence can flow between factions.
     </div>
   </section>
 
@@ -340,7 +354,7 @@
       <img src="comment_length_analysis.png" alt="Vote comment length by vote type — box plot and density distribution." loading="lazy">
       <figcaption>Figure 17. Vote comment length by vote type — box plot and density distribution.</figcaption>
     </figure>
-    <p>This effect varies by community. Community 0 shows the largest gap — their oppose votes average 33 extra words compared to their support votes. The effect holds consistently across all communities, confirming it is a structural feature of the RfA process.</p>
+    <p>This effect varies by community. Community 0 shows the largest gap — their oppose votes average 33 extra words compared to their support votes. The effect holds consistently across all communities, confirming it is a structural feature of the RfA process rather than a quirk of any individual faction.</p>
     
     <figure class="figure">
       <img src="community_comment_length.png" alt="Mean comment length per community by vote type (left) and the oppose verbosity premium per community (right)." loading="lazy">
@@ -348,7 +362,7 @@
     </figure>
     <div class="finding">
       <strong>Curious finding</strong>
-      Oppose comments on candidates who were <em>ultimately promoted</em> were longer (48 words) than oppose comments on candidates who failed (44 words). Voters opposing a successful candidate may feel they need to argue harder against the tide of community consensus.
+      Oppose comments on candidates who were <em>ultimately promoted</em> were longer (48 words) than oppose comments on candidates who failed (44 words). Voters opposing a successful candidate may feel they need to argue harder against the tide of community consensus — suggesting that minority opposition is more effortful than majority opposition.
     </div>
     
     <figure class="figure">
@@ -362,7 +376,7 @@
     <div class="label">09 &mdash; 2013 Snapshot</div>
     <h2>Do Factions Exist Within a Single Year Too?</h2>
     <p class="lead">One explanation for the six communities is simple: editors who were active at the same time naturally co-voted more, so the algorithm groups them by era rather than ideology. To test this, we ran the entire analysis again using only 2013 votes.</p>
-    <p>The 2013 subgraph contains <strong>784 voters</strong> and <strong>103,014 co-vote relationships</strong>. After filtering to agreement-only edges, the network has 783 nodes and 77,680 connections. Running community detection on this single year produced <strong>9 communities</strong> — confirming that genuine factions exist within individual time periods, not just across the full decade.</p>
+    <p>The 2013 subgraph contains <strong>784 voters</strong> and <strong>103,014 co-vote relationships</strong>. After filtering to agreement-only edges, the network has 783 nodes and 77,680 connections. Running community detection on this single year produced <strong>9 communities</strong> — confirming that genuine factions exist within individual time periods, not just across the full decade. The temporal cohort hypothesis is not the full story.</p>
     <div class="stats">
       <div class="stat"><div class="n">784</div><div class="l">Active voters in 2013</div></div>
       <div class="stat"><div class="n">9</div><div class="l">Communities detected</div></div>
@@ -380,7 +394,7 @@
       <figcaption>Figure 21. Monthly voting activity across 2013 by community.</figcaption>
     </figure>
     <h3>What the 2013 communities talked about</h3>
-    <p>Most 2013 communities share the same core vocabulary as the full-dataset communities — <em>tools, work, experience</em> dominate — suggesting that similar standards were being applied within 2013 as across the full decade.</p>
+    <p>Most 2013 communities share the same core vocabulary as the full-dataset communities — <em>tools, work, experience</em> dominate — suggesting that the same underlying standards were being applied within 2013 as across the full decade. The consistency of language across time reinforces the conclusion that these are genuine ideological groupings.</p>
     
     <div class="wc-block">
       <div class="wc-header">
@@ -391,7 +405,7 @@
       
     <figure class="figure">
       <img src="community_0_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 0." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 0.</figcaption>
+      <figcaption>Figure 22a. TF-IDF word cloud for 2013 Community 0.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -403,7 +417,7 @@
       
     <figure class="figure">
       <img src="community_1_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 1." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 1.</figcaption>
+      <figcaption>Figure 22b. TF-IDF word cloud for 2013 Community 1.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -415,7 +429,7 @@
       
     <figure class="figure">
       <img src="community_2_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 2." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 2.</figcaption>
+      <figcaption>Figure 22c. TF-IDF word cloud for 2013 Community 2.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -427,7 +441,7 @@
       
     <figure class="figure">
       <img src="community_3_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 3." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 3.</figcaption>
+      <figcaption>Figure 22d. TF-IDF word cloud for 2013 Community 3.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -439,7 +453,7 @@
       
     <figure class="figure">
       <img src="community_4_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 4." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 4.</figcaption>
+      <figcaption>Figure 22e. TF-IDF word cloud for 2013 Community 4.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -451,7 +465,7 @@
       
     <figure class="figure">
       <img src="community_5_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 5." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 5.</figcaption>
+      <figcaption>Figure 22f. TF-IDF word cloud for 2013 Community 5.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -463,7 +477,7 @@
       
     <figure class="figure">
       <img src="community_6_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 6." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 6.</figcaption>
+      <figcaption>Figure 22g. TF-IDF word cloud for 2013 Community 6.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -475,7 +489,7 @@
       
     <figure class="figure">
       <img src="community_7_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 7." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 7.</figcaption>
+      <figcaption>Figure 22h. TF-IDF word cloud for 2013 Community 7.</figcaption>
     </figure>
     </div>
     <div class="wc-block">
@@ -487,16 +501,50 @@
       
     <figure class="figure">
       <img src="community_8_2013_wordcloud.png" alt="TF-IDF word cloud for 2013 Community 8." loading="lazy">
-      <figcaption>Figure . TF-IDF word cloud for 2013 Community 8.</figcaption>
+      <figcaption>Figure 22i. TF-IDF word cloud for 2013 Community 8.</figcaption>
     </figure>
     </div>
   </section>
 
-  <!-- 10 DOWNLOADS -->
+  <!-- 10 CONCLUSIONS -->
+  <section id="conclusions">
+    <div class="label">10 &mdash; Conclusions</div>
+    <h2>What We Found</h2>
+    <p class="lead">Across a decade of Wikipedia adminship elections, a clear picture emerges: the voter community is not monolithic. It is factional, multipolar, historically shifting — and more complex than a simple left/right divide.</p>
+    <div class="conclusion-grid">
+      <div class="conclusion-card">
+        <h3>&#10003; Voters do form factions</h3>
+        <p>Six stable communities emerged from the agreement network, and nine appeared within 2013 alone. The community structure is robust: it survives even when the analysis is restricted to a single year, ruling out the possibility that communities are merely temporal cohorts.</p>
+      </div>
+      <div class="conclusion-card">
+        <h3>&#10003; The conflict is multipolar</h3>
+        <p>There is no simple two-camp divide. Communities 0, 2, 3, and 5 all clash with each other at significant scale. Some pairs disagree with near-total consistency (C0–C2: 0.96 conflict strength), while others have more moderate tensions. Wikipedia's admin politics are genuinely multi-sided.</p>
+      </div>
+      <div class="conclusion-card">
+        <h3>&#10003; Factions are coalitions, not bubbles</h3>
+        <p>The four large communities have moderate internal clustering (~0.5) — their members freely connect outside the community. Only the two tiny controversy-driven communities (4 and 14 members) vote in near-perfect lockstep. The large factions are broad coalitions, not isolated echo chambers.</p>
+      </div>
+      <div class="conclusion-card">
+        <h3>&#10003; The process became a gatekeeping system</h3>
+        <p>After 2007, the RfA process tightened markedly: fewer candidates, lower promotion rates, falling support ratios. What began as a mechanism for rapidly expanding Wikipedia's admin base shifted toward protecting and defending the existing power structure.</p>
+      </div>
+      <div class="conclusion-card">
+        <h3>&#10003; Two communities formed around controversies</h3>
+        <p>Community 1 (Eastern European editor dispute) and Community 4 (Balkan nationalism content war) have vocabulary so distinctive that their formation is clearly traceable to specific real-world conflicts. Wikipedia's voting factions are not purely about admin standards — they are also shaped by the content wars fought on the platform.</p>
+      </div>
+      <div class="conclusion-card">
+        <h3>&#10003; Opposition requires justification</h3>
+        <p>Oppose votes average 2.3× more words than support votes — a structural feature of the RfA process, consistent across all communities and all years. Minority opposition is even more effortful: oppose comments on ultimately-promoted candidates are longer than those on candidates who failed, suggesting opposers argue harder when swimming against the tide.</p>
+      </div>
+    </div>
+    <p style="margin-top:28px;">Together these findings suggest that Wikipedia's admin community, far from being a neutral meritocracy, is a structured political system with identifiable factions, fault lines, and a gatekeeping dynamic that grew tighter over time. The question of who gets power on Wikipedia — and who decides — turns out to have a complex, multi-factional answer.</p>
+  </section>
+
+  <!-- 11 DOWNLOADS -->
   <section id="downloads">
-    <div class="label">10 &mdash; Downloads</div>
+    <div class="label">11 &mdash; Downloads</div>
     <h2>Explore the Data</h2>
-    <p>The raw dataset is available from Stanford SNAP. Processed graph files and CSV exports are available directly from this project's GitHub repository.</p>
+    <p>The raw dataset is available from Stanford SNAP. Processed graph files are available from our project repositories.</p>
     
         <div class="download-card">
           <div class="download-icon">&#8659;</div>
@@ -507,15 +555,15 @@
         </div>
   </section>
 
-  <!-- 11 EXPLAINER -->
+  <!-- 12 EXPLAINER -->
   <section id="explainer">
-    <div class="label">11 &mdash; Explainer Notebook</div>
+    <div class="label">12 &mdash; Explainer Notebook</div>
     <h2>The Full Technical Story</h2>
     <p>The explainer notebook walks through every step of the analysis in detail: how the graph was projected, how the Louvain algorithm works, how TF-IDF identifies distinctive vocabulary, and all of the code that produced every figure on this page — including the 2013 single-year replication.</p>
     <div class="explainer-box">
       <div>
         <strong>Explainer Notebook</strong>
-        <p>Full pipeline with code and commentary — graph construction, community detection, text analysis, temporal analysis, echo chambers. Hosted on Github.</p>
+        <p>Full pipeline with code and commentary — graph construction, community detection, text analysis, temporal analysis, echo chambers. Hosted on GitHub.</p>
       </div>
       <a href="https://github.com/Stampe04/CSS_Final/blob/master/Notebook.ipynb" target="_blank" rel="noopener" class="explainer-btn">Open Notebook &rarr;</a>
     </div>
